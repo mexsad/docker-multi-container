@@ -15,7 +15,7 @@ after_success:
   - docker build -t mexdocker/docker-worker ./worker
 
   # Log in to the docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-sdtin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #push images to docker hub
   - docker push mexdocker/docker-client
   - docker push mexdocker/docker-nginx
