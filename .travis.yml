@@ -21,16 +21,16 @@ after_success:
   - docker push mexdocker/docker-nginx
   - docker push mexdocker/docker-server
   - docker push mexdocker/docker-worker
-# deploy:
-#   provider: elasticbeanstalk
-#   region: "us-east-2"
-#   app: "docker-react"
-#   env: "DockerReact-env"
-#   bucket_name: "elasticbeanstalk-us-east-2-375469996249"
-#   bucket_path: "docker-react"
-#   on:
-#     branch: master
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-multi-container"
+  env: "DockerMultiContainer-env"
+  bucket_name: "elasticbeanstalk-us-east-2-375469996249"
+  bucket_path: "docker-multi-container"
+  on:
+    branch: master
 
-#   access_key_id: "$AWS_ACCESS_KEY"
-#   secret_access_key:
-#     secure: "$AWS_SECRET_KEY"
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
